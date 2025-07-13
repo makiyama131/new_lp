@@ -166,35 +166,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false);
 
     document.addEventListener('DOMContentLoaded', function () {
+    
         const fixedCta = document.getElementById('fixedFooterCTA');
-        const footerElement = document.querySelector('footer.footer');
+        const heroSection = document.getElementById('hero');
+        const contactSection = document.getElementById('contact');
 
-        // 要素が両方存在する場合のみ処理を実行
-        if (fixedCta && footerElement) {
+        // 必要な要素がすべて存在する場合のみ処理を実行
+        if (fixedCta && heroSection && contactSection) {
 
             const handleCtaVisibility = () => {
                 const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
 
-                // ページ全体の高さ（スクロール可能な範囲）
-                const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+                // CTAを表示し始める位置（ヒーローセクションの下端）
+                const showPosition = heroSection.offsetTop + heroSection.offsetHeight;
 
-                // ページの半分以上スクロールしたか
-                const isPastHalfway = scrollY > pageHeight / 2;
+                // CTAを非表示にし始める位置（コンタクトフォームの上端が画面下から少し見えたあたり）
+                const hidePosition = contactSection.offsetTop - windowHeight + 150; // 150pxのマージン
 
-                // フッターが見え始めたか
-                const isFooterVisible = footerElement.getBoundingClientRect().top < window.innerHeight;
-
-                // 条件：半分以上スクロールしていて、かつフッターが見えていない場合
-                if (isPastHalfway && !isFooterVisible) {
+                // 条件：表示位置を過ぎていて、かつ非表示位置にはまだ到達していない場合
+                if (scrollY > showPosition && scrollY < hidePosition) {
                     fixedCta.classList.add('is-visible');
                 } else {
                     fixedCta.classList.remove('is-visible');
                 }
             };
 
-            // スクロール時とページ読み込み時に判定を実行
+            // スクロール時とページのリサイズ時に判定を実行
             window.addEventListener('scroll', handleCtaVisibility);
-            handleCtaVisibility(); // 初期状態をチェック
+            window.addEventListener('resize', handleCtaVisibility);
+
+            // 初期表示をチェック
+            handleCtaVisibility();
         }
 
     });

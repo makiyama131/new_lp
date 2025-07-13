@@ -1354,7 +1354,6 @@ body {
     }
 }
 
-/* Enhanced Fixed Footer CTA */
 /* --- 固定フッターCTAの基本スタイル --- */
 .fixed-footer-cta {
     position: fixed; /* 画面に固定 */
@@ -1368,8 +1367,14 @@ body {
     text-align: center;
     
     /* スムーズな表示/非表示のためのトランジション */
+    transform: translateY(100%); /* ★変更点: デフォルトで下に隠す */
     transition: transform 0.4s ease-in-out;
 }
+
+.fixed-footer-cta.is-visible {
+    transform: translateY(0); /* ★追加: 表示させるためのクラス */
+}
+
 
 .fixed-footer-cta .container {
     display: flex;
@@ -1400,13 +1405,6 @@ body {
 .fixed-footer-cta .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-
-/* --- CTAを隠すためのクラス --- */
-.fixed-footer-cta.is-hidden {
-    /* 画面の下に隠す */
-    transform: translateY(100%);
 }
 
 /* Enhanced Footer */
