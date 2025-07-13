@@ -8,7 +8,7 @@
                 <p class="hero-subtitle">軽貨物業界に特化した採用システムが、<br>貴社のドライバー不足を根本から解消します。</p>
                 <div style="margin: 40px 0;">
                     <a href="#contact" class="cta-button">無料で採用相談する</a>
-                    <a href="#" class="cta-button secondary" onclick="downloadDocument()">サービス資料（無料）</a>
+                    <a href="#" class="cta-button secondary">サービス資料（無料）</a>
                 </div>
                 <div class="hero-achievements">
                     <div class="achievement-item">
@@ -27,20 +27,7 @@
             </div>
         </div>
     </section>
-
-    <section class="social-proof" id="interview">
-        <div class="container">
-            <h2 class="section-title">導入企業様インタビュー</h2>
-            <p class="section-subtitle">実際にサービスを導入いただいた運送会社様の生の声をお聞きください</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="導入企業インタビュー"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-
+    
     <section class="problems" id="problems">
         <div class="container">
             <h2 class="section-title">こんなお悩みありませんか？</h2>
@@ -201,7 +188,7 @@
                         <div class="case-study-quote">
                             「求人サイトに多額の費用をかけても全く応募が来ませんでしたが、こちらに依頼して2週間で質の高いドライバー10名を採用できました。本当に驚いています。」
                         </div>
-                        <button class="read-more-btn" onclick="toggleDetails(this)">詳細を見る</button>
+                        <button class="read-more-btn">詳細を見る</button>
                         <div class="case-study-details">
                             <p><strong>課題：</strong>事業拡大のため急遽10名の増員が必要になったが、従来の求人手法では全く人が集まらない状態でした。</p>
                             <p><strong>解決策：</strong>当社独自の非公開求人ネットワークと、ターゲットを絞ったスカウトを実施。</p>
@@ -232,7 +219,7 @@
                         <div class="case-study-quote">
                             「採用してもすぐに辞めてしまうのが悩みでした。こちらから紹介される方は意欲が高く、定着率が劇的に改善。面接の手間もほとんど無くなりました。」
                         </div>
-                        <button class="read-more-btn" onclick="toggleDetails(this)">詳細を見る</button>
+                        <button class="read-more-btn" >詳細を見る</button>
                         <div class="case-study-details">
                             <p><strong>課題：</strong>採用後のミスマッチが多く、ドライバーの離職率の高さが経営を圧迫していました。</p>
                             <p><strong>解決策：</strong>候補者の適性や希望を深くヒアリングし、定着を見据えたマッチングを重視。</p>
